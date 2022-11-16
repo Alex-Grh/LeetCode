@@ -38,11 +38,16 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
  * @param {number} target
  * @return {number[]}
  */
+
+// Input: nums = [2,7,11,15], target = 9
+// Output: [0,1]
+// Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+
 let twoSum = function (nums, target) {
    let out = {};
    for (let i = 0; i < nums.length; i++) {
-      let value = nums[i];
-      let pair = target - value;
+      let value = nums[i]; // value [2,7,11,15]
+      let pair = target - value; //
       if (out[pair] !== undefined) {
          return [out[pair], i];
       } else {
