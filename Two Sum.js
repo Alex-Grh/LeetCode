@@ -47,7 +47,7 @@ let twoSum = function (nums, target) {
    let out = {};
    for (let i = 0; i < nums.length; i++) {
       let value = nums[i]; // value [2,7,11,15]
-      let pair = target - value; //
+      let pair = target - value; // 9 - 2; 9 - 7;
       if (out[pair] !== undefined) {
          return [out[pair], i];
       } else {
