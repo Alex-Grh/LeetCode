@@ -1,7 +1,5 @@
 /*
-Given an integer x, return true if x is a palindrome, and false otherwise.
-
- 
+Given an integer x, return true if x is a palindrome, and false otherwise. 
 
 Example 1:
 
@@ -17,36 +15,35 @@ Example 3:
 
 Input: x = 10
 Output: false
-Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
- 
+Explanation: Reads 01 from right to left. Therefore it is not a palindrome. 
 
 Constraints:
 
--231 <= x <= 231 - 1
- 
+-231 <= x <= 231 - 1 
 
-Follow up: Could you solve it without converting the integer to a string?
+!Follow up: Could you solve it without converting the integer to a string?
 */
 
 // let isPalindrome = function (x) {
 //    x = x + "";
-//    let a = +x.split("").reverse().join("");
+//    let a = x.split("").reverse().join("");
 //    if (a === x) {
-//        return false;
+//       return true;
 //    } else {
-//        return true
-//    }   
+//       return false;
+//    }
 // };
 // console.log(isPalindrome(121));
 
+// !Follow up: Could you solve it without converting the integer to a string?
+
 
 let isPalindrome = function (x) {
-   x = x + "";
-   let a = x.split("").reverse().join("");
-   if (a === x) {
-       return true;
-   } else {
-       return false;
-   }   
+   let y = 0;
+   for (; x; x = Math.floor(x / 10)) {     
+      y *= 10;
+      y += x % 10
+   }
+return y;
 };
-console.log(isPalindrome(121));
+console.log(isPalindrome(123));
